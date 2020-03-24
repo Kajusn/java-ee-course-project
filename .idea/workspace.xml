@@ -7,24 +7,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88ac4a28-787d-415c-afb9-307b6b3f6c14" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/entities/Computer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/entities/Manufacturer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/persistence/ComputersDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/persistence/ManufacturersDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/usecases/Computers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/usecases/Manufacturers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/usecases/ManufacturersComputers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/computers-ds.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/computers.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-pratybos-pirma.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java-pratybos-pirma.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/java-pratybos/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/java-pratybos/index.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/entities/Manufacturer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/entities/Manufacturer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/persistence/ComputersDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/persistence/ComputersDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/usecases/ManufacturersComputers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/usecases/ManufacturersComputers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/computers.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/computers.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/entities/Manufacturer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/entities/Manufacturer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/persistence/ComputersDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/persistence/ComputersDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/usecases/ManufacturersComputers.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/usecases/ManufacturersComputers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-pratybos/WEB-INF/classes/org/entities/Manufacturer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/java-pratybos/WEB-INF/classes/org/entities/Manufacturer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-pratybos/WEB-INF/classes/org/persistence/ComputersDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/java-pratybos/WEB-INF/classes/org/persistence/ComputersDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-pratybos/WEB-INF/classes/org/usecases/ManufacturersComputers.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/java-pratybos/WEB-INF/classes/org/usecases/ManufacturersComputers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-pratybos/computers.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/java-pratybos/computers.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -280,7 +274,7 @@
       <workItem from="1583842841089" duration="2097000" />
       <workItem from="1583845193913" duration="10214000" />
       <workItem from="1585058996673" duration="1485000" />
-      <workItem from="1585060520345" duration="3595000" />
+      <workItem from="1585060520345" duration="4909000" />
     </task>
     <servers />
   </component>
@@ -312,22 +306,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="304" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583842639119" />
-    <state width="1054" height="181" key="GridCell.Tab.0.bottom" timestamp="1585063954493">
+    <state width="1054" height="181" key="GridCell.Tab.0.bottom" timestamp="1585065361968">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1054" height="181" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585063954493" />
-    <state width="1054" height="181" key="GridCell.Tab.0.center" timestamp="1585063954493">
+    <state width="1054" height="181" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585065361968" />
+    <state width="1054" height="181" key="GridCell.Tab.0.center" timestamp="1585065361968">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1054" height="181" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585063954493" />
-    <state width="1054" height="181" key="GridCell.Tab.0.left" timestamp="1585063954492">
+    <state width="1054" height="181" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585065361968" />
+    <state width="1054" height="181" key="GridCell.Tab.0.left" timestamp="1585065361968">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1054" height="181" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585063954492" />
-    <state width="1054" height="181" key="GridCell.Tab.0.right" timestamp="1585063954493">
+    <state width="1054" height="181" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585065361968" />
+    <state width="1054" height="181" key="GridCell.Tab.0.right" timestamp="1585065361968">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1054" height="181" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585063954493" />
+    <state width="1054" height="181" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585065361968" />
     <state x="676" y="162" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1583845545095">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

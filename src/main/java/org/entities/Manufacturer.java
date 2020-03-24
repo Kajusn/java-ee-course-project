@@ -6,6 +6,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -25,8 +26,8 @@ public class Manufacturer implements Serializable {
     @Column(name = "NAME")
     private String name;
 
-    @OneToMany(mappedBy = "manufacturer")
-    private List<Computer> computers;
+    @OneToMany(mappedBy = "manufacturer", fetch = FetchType.EAGER)
+    private List<Computer> computers = new ArrayList<>();
 
     @Override
     public boolean equals(Object o) {

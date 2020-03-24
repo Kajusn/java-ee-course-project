@@ -15,14 +15,6 @@ public class ComputersDAO {
     @PersistenceContext
     private EntityManager em;
 
-    public List<Computer> loadAll() {
-        return em.createNamedQuery("Computer.findAll", Computer.class).getResultList();
-    }
-
-    public void setEm(EntityManager em) {
-        this.em = em;
-    }
-
     public void persist(Computer computer){
         this.em.persist(computer);
     }
