@@ -24,9 +24,7 @@
       <change beforePath="$PROJECT_DIR$/java-pratybos-pirma.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java-pratybos-pirma.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/java-pratybos/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/java-pratybos/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/java-pratybos/index.xhtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/java-pratybos/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/java-pratybos/index.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,10 +258,6 @@
                 <item name="JBoss Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
                 <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:ComputerDB" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
             </expand>
             <select />
           </treeState>
@@ -286,7 +280,7 @@
       <workItem from="1583842841089" duration="2097000" />
       <workItem from="1583845193913" duration="10214000" />
       <workItem from="1585058996673" duration="1485000" />
-      <workItem from="1585060520345" duration="3253000" />
+      <workItem from="1585060520345" duration="3595000" />
     </task>
     <servers />
   </component>
