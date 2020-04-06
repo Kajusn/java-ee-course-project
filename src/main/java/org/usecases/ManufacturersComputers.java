@@ -40,6 +40,6 @@ public class ManufacturersComputers {
     public String createComputer() {
         computerToCreate.setManufacturer(this.manufacturer);
         computersDAO.persist(computerToCreate);
-        return "/computers.xhtml?faces-redirect=true&manufacturerId=" + this.manufacturer.getId();
+        return "computers?faces-redirect=true&manufacturerId=" + this.manufacturer.getId();
     }
 }

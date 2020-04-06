@@ -8,17 +8,10 @@
   <component name="ChangeListManager">
     <list default="true" id="88ac4a28-787d-415c-afb9-307b6b3f6c14" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/entities/Manufacturer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/entities/Manufacturer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/persistence/ComputersDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/persistence/ComputersDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/usecases/Manufacturers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/usecases/Manufacturers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/usecases/ManufacturersComputers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/usecases/ManufacturersComputers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/computers.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/computers.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/entities/Manufacturer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/entities/Manufacturer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/persistence/ComputersDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/persistence/ComputersDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/usecases/ManufacturersComputers.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/usecases/ManufacturersComputers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/java-pratybos/WEB-INF/classes/org/entities/Manufacturer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/java-pratybos/WEB-INF/classes/org/entities/Manufacturer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/java-pratybos/WEB-INF/classes/org/persistence/ComputersDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/java-pratybos/WEB-INF/classes/org/persistence/ComputersDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/java-pratybos/WEB-INF/classes/org/usecases/ManufacturersComputers.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/java-pratybos/WEB-INF/classes/org/usecases/ManufacturersComputers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/java-pratybos/computers.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/java-pratybos/computers.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,7 +243,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="JBoss Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -274,7 +267,8 @@
       <workItem from="1583842841089" duration="2097000" />
       <workItem from="1583845193913" duration="10214000" />
       <workItem from="1585058996673" duration="1485000" />
-      <workItem from="1585060520345" duration="4909000" />
+      <workItem from="1585060520345" duration="6290000" />
+      <workItem from="1586158721857" duration="480000" />
     </task>
     <servers />
   </component>
@@ -306,30 +300,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="304" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583842639119" />
-    <state width="1054" height="181" key="GridCell.Tab.0.bottom" timestamp="1585065361968">
+    <state width="1054" height="181" key="GridCell.Tab.0.bottom" timestamp="1586159286265">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1054" height="181" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585065361968" />
-    <state width="1054" height="181" key="GridCell.Tab.0.center" timestamp="1585065361968">
+    <state width="1054" height="181" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586159286265" />
+    <state width="1054" height="181" key="GridCell.Tab.0.center" timestamp="1586159286264">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1054" height="181" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585065361968" />
-    <state width="1054" height="181" key="GridCell.Tab.0.left" timestamp="1585065361968">
+    <state width="1054" height="181" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586159286264" />
+    <state width="1054" height="181" key="GridCell.Tab.0.left" timestamp="1586159286264">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1054" height="181" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585065361968" />
-    <state width="1054" height="181" key="GridCell.Tab.0.right" timestamp="1585065361968">
+    <state width="1054" height="181" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586159286264" />
+    <state width="1054" height="181" key="GridCell.Tab.0.right" timestamp="1586159286264">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1054" height="181" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585065361968" />
+    <state width="1054" height="181" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586159286264" />
     <state x="676" y="162" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1583845545095">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="676" y="162" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583845545095" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1585060799680">
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1586158769805">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585060799680" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586158769805" />
     <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1585063672761">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

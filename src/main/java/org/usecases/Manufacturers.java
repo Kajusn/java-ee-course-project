@@ -31,7 +31,7 @@ public class Manufacturers {
     @Transactional
     public String createManufacturer(){
         this.manufacturersDAO.persist(manufacturerToCreate);
-        return "success";
+        return "index?faces-redirect=true";
     }
 
     private void loadAllManufacturers(){
