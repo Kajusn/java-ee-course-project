@@ -1,6 +1,7 @@
 package org.persistence;
 
 import org.entities.Computer;
+import org.entities.Manufacturer;
 
 import javax.ejb.ApplicationException;
 import javax.enterprise.context.ApplicationScoped;
@@ -18,4 +19,6 @@ public class ComputersDAO {
     public void persist(Computer computer){
         this.em.persist(computer);
     }
+
+    public Computer findOne(Integer id) { return em.find(Computer.class, id); }
 }

@@ -9,7 +9,7 @@
     <h2>Computers made by #{manufacturersComputers.manufacturer.name}:</h2>
     <ol>
         <ui:repeat value="#{manufacturersComputers.manufacturer.computers}" var="computer">
-            <li>#{computer.name}</li>
+            <li><h:link value = "#{computer.name}" outcome="computerProcessors?computerId=#{computer.id}"/></li>
         </ui:repeat>
     </ol>
     <h:form>
