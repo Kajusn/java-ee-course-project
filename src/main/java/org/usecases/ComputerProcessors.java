@@ -44,8 +44,13 @@ public class ComputerProcessors {
         ArrayList<Computer> computersList = (ArrayList<Computer>) processorToCreate.getComputers();
         computersList.add(this.computer);
         processorToCreate.setComputers(computersList);
-
         processorsDAO.persist(processorToCreate);
+
+        /* Sitoj vietoj neveikia nes sukuria papildoma Computer kai daugiau nei 1 procesorius viename
+        *  sukurtas papildomas visada identiskas jau buvusiam, tiesiog duplikuoja*/
+        ArrayList<Processor> processorsList = (ArrayList<Processor>) this.computer.getProcessors();
+        processorsList.add(processorToCreate);
+        this.computer.setProcessors(processorsList);
         return "computerProcessors?faces-redirect=true&computerId=" + this.computer.getId();
     }
 }
