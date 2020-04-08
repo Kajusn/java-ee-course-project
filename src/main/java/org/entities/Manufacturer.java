@@ -26,7 +26,7 @@ public class Manufacturer implements Serializable {
     @Column(name = "NAME")
     private String name;
 
-    @OneToMany(mappedBy = "manufacturer", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "manufacturer")
     private List<Computer> computers = new ArrayList<>();
 
     @Override

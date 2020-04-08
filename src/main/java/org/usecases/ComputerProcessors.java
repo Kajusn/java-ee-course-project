@@ -3,8 +3,10 @@ package org.usecases;
 import lombok.Getter;
 import lombok.Setter;
 import org.entities.Computer;
+import org.entities.Manufacturer;
 import org.entities.Processor;
 import org.persistence.ComputersDAO;
+import org.persistence.ManufacturersDAO;
 import org.persistence.ProcessorsDAO;
 
 import javax.annotation.PostConstruct;
@@ -25,8 +27,19 @@ public class ComputerProcessors {
     @Inject
     private ProcessorsDAO processorsDAO;
 
+    @Inject
+    private ManufacturersDAO manufacturersDAO;
+
+    @Getter
+    private List<Processor> availableProcessors;
+
     @Getter @Setter
     private Computer computer;
+
+    private void loadProcessors(){
+        availableProcessors = processorsDAO.loadAll();
+        availableProcessors.removeAll(computer.getProcessors());
+    }
 
     @PostConstruct
     public void init() {
@@ -34,10 +47,12 @@ public class ComputerProcessors {
                 FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
         Integer computerId = Integer.parseInt(requestParameters.get("computerId"));
         this.computer = computersDAO.findOne(computerId);
+        loadProcessors();
     }
 
     @Transactional
     public String addProcessor(Processor processor) {
+        Manufacturer temp = manufacturersDAO.findOne(this.computer.getManufacturer().getId());
         processor.getComputers().add(this.computer);
         computersDAO.update(this.computer);
         processorsDAO.update(processor);

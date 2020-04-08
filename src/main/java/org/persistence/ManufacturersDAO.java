@@ -1,15 +1,17 @@
 package org.persistence;
 
 import org.entities.Manufacturer;
+import org.entities.Processor;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @ApplicationScoped
 public class ManufacturersDAO {
-    @PersistenceContext
+    @Inject
     private EntityManager em;
 
     public List<Manufacturer> loadAll() {
@@ -25,4 +27,8 @@ public class ManufacturersDAO {
     }
 
     public Manufacturer findOne(Integer id) { return em.find(Manufacturer.class, id); }
+
+    public void update(Manufacturer manufacturer){
+        this.em.merge(manufacturer);
+    }
 }

@@ -6,6 +6,7 @@ import org.entities.Manufacturer;
 import javax.ejb.ApplicationException;
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.SessionScoped;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.io.Serializable;
@@ -13,7 +14,7 @@ import java.util.List;
 
 @ApplicationScoped
 public class ComputersDAO {
-    @PersistenceContext
+    @Inject
     private EntityManager em;
 
     public void persist(Computer computer){

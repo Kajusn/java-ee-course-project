@@ -27,7 +27,7 @@ public class Processor implements Serializable {
     @Column(name = "NAME")
     private String name;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany
     @JoinTable(name = "COMPUTER_PROCESSORS")
     private List<Computer> computers = new ArrayList<>();
 

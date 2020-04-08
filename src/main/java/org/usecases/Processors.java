@@ -20,31 +20,21 @@ public class Processors {
     @Inject
     private ProcessorsDAO processorsDAO;
 
-    @Inject
-    private ComputersDAO computersDAO;
-
     @Getter @Setter
     private Processor processorToCreate = new Processor();
 
     @Getter
     private List<Processor> allProcessors;
 
-    @Getter @Setter
-    private Computer computer;
-
     @PostConstruct
     public void init() {
-        Map<String, String> requestParameters =
-                FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
-        Integer computerId = Integer.parseInt(requestParameters.get("computerId"));
-        this.computer = computersDAO.findOne(computerId);
         loadAllProcessors();
     }
 
     @Transactional
     public String createProcessor(){
         processorsDAO.persist(processorToCreate);
-        return "computerProcessors?faces-redirect=true&computerId=" + this.computer.getId();
+        return "processors?faces-redirect=true";
     }
 
     private void loadAllProcessors(){

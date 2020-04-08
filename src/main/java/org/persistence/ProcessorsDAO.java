@@ -4,13 +4,14 @@ import org.entities.Manufacturer;
 import org.entities.Processor;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @ApplicationScoped
 public class ProcessorsDAO {
-    @PersistenceContext
+    @Inject
     private EntityManager em;
 
     public List<Processor> loadAll() {
@@ -20,6 +21,8 @@ public class ProcessorsDAO {
     public void persist(Processor processor){
         this.em.persist(processor);
     }
+
+    public Processor findOne(Integer id) { return em.find(Processor.class, id); }
 
     public void update(Processor processor){
         this.em.merge(processor);

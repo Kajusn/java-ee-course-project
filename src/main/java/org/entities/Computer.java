@@ -30,7 +30,7 @@ public class Computer implements Serializable {
     @JoinColumn(name="MANUFACTURER_ID")
     private Manufacturer manufacturer;
 
-    @ManyToMany(mappedBy = "computers", fetch = FetchType.EAGER)
+    @ManyToMany(mappedBy = "computers")
     private List<Processor> processors = new ArrayList<>();
 
     @Override
