@@ -6,6 +6,7 @@
     <typeAliases>
         <typeAlias type="org.mybatis.model.Manufacturer" alias="Manufacturer"/>
         <typeAlias type="org.mybatis.model.Computer" alias="Computer"/>
+        <typeAlias type="org.mybatis.model.Processor" alias="Processor"/>
     </typeAliases>
     <environments default="development">
         <environment id="development">
@@ -18,5 +19,6 @@
     <mappers>
         <mapper resource="mybatis.xml/ManufacturerMapper.xml"/>
         <mapper resource="mybatis.xml/ComputerMapper.xml"/>
+        <mapper resource="mybatis.xml/ProcessorMapper.xml"/>
     </mappers>
 </configuration>

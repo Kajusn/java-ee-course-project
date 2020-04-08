@@ -19,11 +19,12 @@
 
         <table schema="public" tableName="manufacturer">
             <generatedKey column="id" identity="true" sqlStatement="JDBC" />
-            <ignoreColumn column="opt_lock_version" />
         </table>
         <table schema="public" tableName="computer">
             <generatedKey column="id" identity="true" sqlStatement="JDBC" />
-            <ignoreColumn column="opt_lock_version" />
+        </table>
+        <table schema="public" tableName="processor">
+            <generatedKey column="id" identity="true" sqlStatement="JDBC" />
         </table>
     </context>
 </generatorConfiguration>
