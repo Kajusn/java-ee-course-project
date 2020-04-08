@@ -14,16 +14,18 @@
     </ol>
     <h3>Available processors to add:</h3>
     <h:form>
-        <ul>
+        <table>
             <ui:repeat value="#{computerProcessors.availableProcessors}" var="processor">
-                <li>
-                    #{processor.name}
-                    <h:commandButton value="Add to PC" action="#{computerProcessors.addProcessor(processor)}" >
-                        <f:param name="computerId" value="#{computerProcessors.computer.id}" />
-                    </h:commandButton>
-                </li>
+                <tr>
+                    <td>#{processor.name}</td>
+                    <td>
+                        <h:commandButton value="Add to PC" action="#{computerProcessors.addProcessor(processor)}" >
+                            <f:param name="computerId" value="#{computerProcessors.computer.id}" />
+                        </h:commandButton>
+                    </td>
+                </tr>
             </ui:repeat>
-        </ul>
+        </table>
     </h:form>
 </h:body>
 </html>
