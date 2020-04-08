@@ -8,15 +8,28 @@
 <h:body>
     <h2>Processors in computer #{computerProcessors.computer.name}:</h2>
     <ol>
-        <ui:repeat value="#{computerProcessors.computer.processors}" var="processor">
-            <li>#{processor.name}</li>
+        <ui:repeat value="#{computerProcessors.computer.processors}" var="processor1">
+            <li>#{processor1.name}</li>
         </ui:repeat>
     </ol>
+    <h3>Processors in inventory:</h3>
     <h:form>
-        <h:inputText a:placeholder="name" value="#{computerProcessors.processorToCreate.name}" required="true" />
-        <h:commandButton value="Add processor to computer" action="#{computerProcessors.createProcessor}" >
+        <h:inputText a:placeholder="name" value="#{processors.processorToCreate.name}" required="true" />
+        <h:commandButton value="Create a processor" action="#{processors.createProcessor}" >
             <f:param name="computerId" value="#{computerProcessors.computer.id}" />
         </h:commandButton>
+    </h:form>
+    <h:form>
+        <ul>
+            <ui:repeat value="#{processors.allProcessors}" var="processor">
+                <li>
+                    #{processor.name}
+                    <h:commandButton value="Add to PC" action="#{computerProcessors.addProcessor(processor)}" >
+                        <f:param name="computerId" value="#{computerProcessors.computer.id}" />
+                    </h:commandButton>
+                </li>
+            </ui:repeat>
+        </ul>
     </h:form>
 </h:body>
 </html>

@@ -14,22 +14,19 @@ import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.enterprise.inject.Model;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 @Model
 public class ComputerProcessors {
+    @Inject
+    private ComputersDAO computersDAO;
 
     @Inject
     private ProcessorsDAO processorsDAO;
 
-    @Inject
-    private ComputersDAO computersDAO;
-
     @Getter @Setter
     private Computer computer;
-
-    @Getter @Setter
-    private Processor processorToCreate = new Processor();
 
     @PostConstruct
     public void init() {
@@ -40,17 +37,10 @@ public class ComputerProcessors {
     }
 
     @Transactional
-    public String createProcessor() {
-        ArrayList<Computer> computersList = (ArrayList<Computer>) processorToCreate.getComputers();
-        computersList.add(this.computer);
-        processorToCreate.setComputers(computersList);
-        processorsDAO.persist(processorToCreate);
-
-        /* Sitoj vietoj neveikia nes sukuria papildoma Computer kai daugiau nei 1 procesorius viename
-        *  sukurtas papildomas visada identiskas jau buvusiam, tiesiog duplikuoja*/
-        ArrayList<Processor> processorsList = (ArrayList<Processor>) this.computer.getProcessors();
-        processorsList.add(processorToCreate);
-        this.computer.setProcessors(processorsList);
+    public String addProcessor(Processor processor) {
+        processor.getComputers().add(this.computer);
+        computersDAO.update(this.computer);
+        processorsDAO.update(processor);
         return "computerProcessors?faces-redirect=true&computerId=" + this.computer.getId();
     }
 }

@@ -21,4 +21,6 @@ public class ComputersDAO {
     }
 
     public Computer findOne(Integer id) { return em.find(Computer.class, id); }
+
+    public void update(Computer computer){ em.merge(computer); }
 }
