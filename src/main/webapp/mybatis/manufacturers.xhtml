@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head/>
+<h:body>
+    <h2>Manufacturers:</h2>
+    <ol>
+        <ui:repeat value="#{manufacturersMyBatis.allManufacturers}" var="manufacturer">
+            <li><h:link value = "#{manufacturer.name}" outcome="computers?manufacturerId=#{manufacturer.id}"/></li>
+        </ui:repeat>
+    </ol>
+    <h:form>
+        <h:inputText value="#{manufacturersMyBatis.manufacturerToCreate.name}" required="true" />
+        <h:commandButton value="Add new manufacturer" action="#{manufacturersMyBatis.createManufacturer}" />
+    </h:form>
+    <h:link value="Home" outcome="/index"/>
+    <h3><h:link value = "CPUs in inventory" outcome = "processors"/></h3>
+</h:body>
+</html>

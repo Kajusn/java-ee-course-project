@@ -9,7 +9,9 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;
 import java.io.IOException;
 
+@ApplicationScoped
 public class MyBatisResources {
+
     @Produces
     @ApplicationScoped
     @SessionFactoryProvider
