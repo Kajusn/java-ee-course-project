@@ -1,6 +1,7 @@
 package org.mybatis.dao;
 
 import org.mybatis.cdi.Mapper;
+import org.mybatis.model.Computer;
 import org.mybatis.model.Manufacturer;
 
 import java.util.List;

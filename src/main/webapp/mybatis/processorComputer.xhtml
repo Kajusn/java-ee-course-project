@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core" xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head/>
+<h:body>
+    <h2>Computers running a #{processorComputersMyBatis.processor.name} CPU:</h2>
+    <table>
+        <tr>
+            <th>Manufacturer</th>
+            <th>Name</th>
+            <th>CPU</th>
+        </tr>
+        <ui:repeat value="#{processorComputersMyBatis.processor.computers}" var="computer">
+            <tr>
+                <td>#{computer.manufacturer.name}</td>
+                <td>#{computer.name}</td>
+                <td>#{processorComputersMyBatis.processor.name}</td>
+            </tr>
+        </ui:repeat>
+    </table>
+</h:body>
+</html>

@@ -59,4 +59,9 @@
     select ID, NAME, MANUFACTURER_ID
     from PUBLIC.COMPUTER
   </select>
+  <select id="selectComputerByManufacturerId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select ID, NAME, MANUFACTURER_ID
+    from PUBLIC.COMPUTER
+    WHERE MANUFACTURER_ID = #{id,jdbcType=INTEGER}
+  </select>
 </mapper>
