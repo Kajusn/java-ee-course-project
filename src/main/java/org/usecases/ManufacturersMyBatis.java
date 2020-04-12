@@ -31,7 +31,7 @@ public class ManufacturersMyBatis {
     @Transactional
     public String createManufacturer(){
         manufacturerMapper.insert(manufacturerToCreate);
-        return "/mybatis/manufacturers?faces-redirect=true";
+        return "manufacturers?faces-redirect=true";
     }
 
     private void loadAllManufacturers(){

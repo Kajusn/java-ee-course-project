@@ -6,21 +6,22 @@
       xmlns:f="http://java.sun.com/jsf/core" xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 <h:head/>
 <h:body>
-    <h2>Processors in computer #{computerProcessors.computer.name}:</h2>
+    <h1>MyBatis</h1>
+    <h2>Processors in computer #{computerProcessorsMyBatis.computer.name}:</h2>
     <ol>
-        <ui:repeat value="#{computerProcessors.computer.processors}" var="processor">
+        <ui:repeat value="#{computerProcessorsMyBatis.computerProcessors}" var="processor">
             <li>#{processor.name}</li>
         </ui:repeat>
     </ol>
     <h3>Available processors to add:</h3>
     <h:form>
         <table>
-            <ui:repeat value="#{computerProcessors.availableProcessors}" var="processor">
+            <ui:repeat value="#{computerProcessorsMyBatis.availableProcessors}" var="processor">
                 <tr>
                     <td>#{processor.name}</td>
                     <td>
-                        <h:commandButton value="Add to PC" action="#{computerProcessors.addProcessor(processor)}" >
-                            <f:param name="computerId" value="#{computerProcessors.computer.id}" />
+                        <h:commandButton value="Add to PC" action="#{computerProcessorsMyBatis.addProcessor(processor)}" >
+                            <f:param name="computerId" value="#{computerProcessorsMyBatis.computer.id}" />
                         </h:commandButton>
                     </td>
                 </tr>

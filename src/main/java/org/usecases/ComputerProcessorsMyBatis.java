@@ -2,12 +2,13 @@ package org.usecases;
 
 import lombok.Getter;
 import lombok.Setter;
+
 import org.mybatis.model.Computer;
-import org.mybatis.model.Manufacturer;
+import org.mybatis.model.ComputerProcessor;
 import org.mybatis.model.Processor;
 import org.mybatis.dao.ComputerMapper;
-import org.mybatis.dao.ManufacturerMapper;
 import org.mybatis.dao.ProcessorMapper;
+import org.mybatis.dao.ComputerProcessorMapper;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
@@ -26,7 +27,7 @@ public class ComputerProcessorsMyBatis {
     private ProcessorMapper processorMapper;
 
     @Inject
-    private ManufacturerMapper manufacturerMapper;
+    private ComputerProcessorMapper computerProcessorMapper;
 
     @Getter
     private List<Processor> availableProcessors;
@@ -34,26 +35,38 @@ public class ComputerProcessorsMyBatis {
     @Getter @Setter
     private Computer computer;
 
+    @Getter @Setter
+    private Integer computerId;
+
+    @Getter @Setter
+    private Integer processorId;
+
+    @Getter @Setter
+    private List<Processor> computerProcessors;
+
     private void loadProcessors(){
         availableProcessors = processorMapper.selectAll();
-        //availableProcessors.removeAll(computer.getProcessors()); // Reikia taisyti
+        this.computerProcessors = computerProcessorMapper.getProcessors(computerId);
+        if (computerProcessors.get(0) == null)  // MyBatis returns a size 1 list with null elements, so to avoid printing an empty list do this
+            computerProcessors.remove(0);
+        availableProcessors.removeAll(computerProcessors);
     }
 
     @PostConstruct
     public void init() {
         Map<String, String> requestParameters =
                 FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
-        Integer computerId = Integer.parseInt(requestParameters.get("computerId"));
+        this.computerId = Integer.parseInt(requestParameters.get("computerId"));
         this.computer = computerMapper.selectByPrimaryKey(computerId);
         loadProcessors();
     }
 
     @Transactional
     public String addProcessor(Processor processor) {
-        Manufacturer temp = manufacturerMapper.selectByPrimaryKey(this.computer.getManufacturerId());
-        //processor.getComputers().add(this.computer);
-        //computerMapper.update(this.computer);
-        //processorMapper.update(processor);
+        ComputerProcessor computerProcessor = new ComputerProcessor();
+        computerProcessor.setProcessorId(processor.getId());
+        computerProcessor.setComputerId(this.computerId);
+        computerProcessorMapper.insert(computerProcessor);
         return "computerProcessors?faces-redirect=true&computerId=" + this.computer.getId();
     }
 }

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.mybatis.dao.ComputerProcessorMapper">
+
+    <resultMap id="ProcessorResultMap" type="org.mybatis.model.Computer">
+        <id column="ID" jdbcType="INTEGER" property="id" />
+        <result column="NAME" jdbcType="VARCHAR" property="name" />
+        <collection javaType="ArrayList" property="processors" resultMap="ComputerResultMap" />
+    </resultMap>
+
+    <resultMap id="ComputerResultMap" type="org.mybatis.model.Processor">
+        <id column="ID" jdbcType="INTEGER" property="id"/>
+        <result column="NAME" jdbcType="VARCHAR" property="name"/>
+        <collection javaType="ArrayList" property="computers" resultMap="ProcessorResultMap" />
+    </resultMap>
+
+    <insert id="addProcessor" parameterType="java.lang.Integer">
+    INSERT INTO computer_processors (computers_Id, processors_Id)
+    VALUES (#{computerId, jdbcType=INTEGER}, #{processorId, jdbcType=INTEGER});
+    </insert>
+    <delete id="deleteProcessor" >
+    DELETE FROM computer_processors
+    WHERE 1=1
+    AND computers_id=#{computerId}
+    AND processors_id=#{processorId}
+    </delete>
+    <select id="getProcessors" resultMap="ProcessorResultMap">
+    SELECT
+    p.id AS id, p.name AS name
+    FROM computer AS  c
+    LEFT JOIN computer_processors AS cp ON c.id = cp.computers_id
+    LEFT JOIN processor AS p ON p.id = cp.processors_id
+    WHERE 1=1
+      AND c.id = #{id,jdbcType=INTEGER}
+    </select>
+    <select id="getComputers" resultMap="ComputerResultMap">
+    SELECT
+    c.id AS id, c.name AS name
+    FROM processor AS  p
+    LEFT JOIN computer_processors AS cp ON p.id = cp.processors_id
+    LEFT JOIN computer AS c ON c.id = cp.computers_id
+    WHERE 1=1
+    AND p.id = #{id,jdbcType=INTEGER}
+    </select>
+    <insert id="insert" parameterType="org.mybatis.model.ComputerProcessor" useGeneratedKeys="true"> <!-- Foreign keys are inserted poorly -->
+        insert into PUBLIC.COMPUTER_PROCESSORS (PROCESSORS_ID, COMPUTERS_ID)
+        values (#{processorId,jdbcType=INTEGER}, #{computerId,jdbcType=INTEGER})
+    </insert>
+</mapper>

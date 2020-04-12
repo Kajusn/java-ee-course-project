@@ -6,16 +6,15 @@
       xmlns:f="http://java.sun.com/jsf/core" xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 <h:head/>
 <h:body>
+    <h1>MyBatis</h1>
     <h2>Computers running a #{processorComputersMyBatis.processor.name} CPU:</h2>
     <table>
         <tr>
-            <th>Manufacturer</th>
             <th>Name</th>
             <th>CPU</th>
         </tr>
-        <ui:repeat value="#{processorComputersMyBatis.processor.computers}" var="computer">
+        <ui:repeat value="#{processorComputersMyBatis.processorComputers}" var="computer">
             <tr>
-                <td>#{computer.manufacturer.name}</td>
                 <td>#{computer.name}</td>
                 <td>#{processorComputersMyBatis.processor.name}</td>
             </tr>

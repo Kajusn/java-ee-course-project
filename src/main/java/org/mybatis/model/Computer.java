@@ -1,5 +1,7 @@
 package org.mybatis.model;
 
+import java.util.List;
+
 public class Computer {
     /**
      *
@@ -18,6 +20,22 @@ public class Computer {
      * @mbg.generated Fri Apr 10 15:44:35 EEST 2020
      */
     private String name;
+
+    private Manufacturer manufacturer;
+
+    private List<Processor> processors;
+
+    public void setProcessors(List<Processor> processorList) {
+        this.processors = processorList;
+    }
+
+    public Manufacturer getManufacturer() {
+        return manufacturer;
+    }
+
+    public void setManufacturer(Manufacturer manufacturer) {
+        this.manufacturer = manufacturer;
+    }
 
     /**
      *

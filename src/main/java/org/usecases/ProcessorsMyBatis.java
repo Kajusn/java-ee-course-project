@@ -31,7 +31,7 @@ public class ProcessorsMyBatis {
     @Transactional
     public String createProcessor(){
         processorMapper.insert(processorToCreate);
-        return "mybatis/processors?faces-redirect=true";
+        return "processors?faces-redirect=true";
     }
 
     private void loadAllProcessors(){

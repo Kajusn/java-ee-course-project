@@ -10,7 +10,21 @@
     <id column="ID" jdbcType="INTEGER" property="id" />
     <result column="NAME" jdbcType="VARCHAR" property="name" />
     <result column="MANUFACTURER_ID" jdbcType="INTEGER" property="manufacturerId" />
+    <association property="manufacturer"
+                 columnPrefix="manufacturer_"
+                 resultMap="org.mybatis.dao.ManufacturerMapper.BaseResultMap"/>
+    <!-- Manually added for ManyToMany -->
+    <!-- Nested select (N+1 select problem) -->
+    <collection property="processors" javaType="ArrayList"
+                ofType="Processor" column="id"
+                select="selectProcessorsForComputer"/>
   </resultMap>
+  <select id="selectProcessorsForComputer" resultType="Processor" parameterType="java.lang.Integer">
+    SELECT c.id, c.name
+    FROM public.processor c
+        JOIN public.computer_processors cp on c.id = cp.processors_id
+    WHERE cp.computers_id = #{id,jdbcType=INTEGER}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--
       WARNING - @mbg.generated

@@ -20,5 +20,6 @@
         <mapper resource="mybatis.xml/ManufacturerMapper.xml"/>
         <mapper resource="mybatis.xml/ComputerMapper.xml"/>
         <mapper resource="mybatis.xml/ProcessorMapper.xml"/>
+        <mapper resource="mybatis.xml/ComputerProcessorMapper.xml"/>
     </mappers>
 </configuration>

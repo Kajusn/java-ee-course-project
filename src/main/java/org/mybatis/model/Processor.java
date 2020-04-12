@@ -1,5 +1,7 @@
 package org.mybatis.model;
 
+import java.util.List;
+
 public class Processor {
     /**
      *
@@ -9,6 +11,12 @@ public class Processor {
      * @mbg.generated Fri Apr 10 15:44:35 EEST 2020
      */
     private Integer id;
+
+    private List<Computer> computers;
+
+    public void setComputers(List<Computer> computerList) {
+        this.computers = computerList;
+    }
 
     /**
      *
