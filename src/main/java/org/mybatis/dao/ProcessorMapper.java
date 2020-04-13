@@ -40,6 +40,8 @@ public interface ProcessorMapper {
      */
     List<Processor> selectAll();
 
+    List<Computer> selectComputersForProcessor(Integer id);
+
     void setComputers(List<Computer> computerList);
 
     /**

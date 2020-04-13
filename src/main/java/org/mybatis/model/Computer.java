@@ -1,6 +1,7 @@
 package org.mybatis.model;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Computer {
     /**
@@ -116,5 +117,14 @@ public class Computer {
      */
     public void setManufacturerId(Integer manufacturerId) {
         this.manufacturerId = manufacturerId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        org.mybatis.model.Computer computer = (org.mybatis.model.Computer) o;
+        return Objects.equals(id, computer.id) &&
+                Objects.equals(name, computer.name);
     }
 }

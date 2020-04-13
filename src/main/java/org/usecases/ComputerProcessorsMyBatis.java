@@ -33,6 +33,9 @@ public class ComputerProcessorsMyBatis {
     private List<Processor> availableProcessors;
 
     @Getter @Setter
+    private List<Processor> computerProcessors;
+
+    @Getter @Setter
     private Computer computer;
 
     @Getter @Setter
@@ -41,14 +44,9 @@ public class ComputerProcessorsMyBatis {
     @Getter @Setter
     private Integer processorId;
 
-    @Getter @Setter
-    private List<Processor> computerProcessors;
-
     private void loadProcessors(){
         availableProcessors = processorMapper.selectAll();
-        this.computerProcessors = computerProcessorMapper.getProcessors(computerId);
-        if (computerProcessors.get(0) == null)  // MyBatis returns a size 1 list with null elements, so to avoid printing an empty list do this
-            computerProcessors.remove(0);
+        this.computerProcessors = computerMapper.selectProcessorsForComputer(computerId);
         availableProcessors.removeAll(computerProcessors);
     }
 

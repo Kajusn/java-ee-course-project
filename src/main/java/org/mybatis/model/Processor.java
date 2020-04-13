@@ -1,6 +1,7 @@
 package org.mybatis.model;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Processor {
     /**
@@ -73,5 +74,14 @@ public class Processor {
      */
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        org.mybatis.model.Processor processor = (org.mybatis.model.Processor) o;
+        return Objects.equals(id, processor.id) &&
+                Objects.equals(name, processor.name);
     }
 }

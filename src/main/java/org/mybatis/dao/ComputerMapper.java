@@ -45,6 +45,8 @@ public interface ComputerMapper {
 
     void setProcessors(List<Processor> processorList);
 
+    List<Processor> selectProcessorsForComputer(Integer id);
+
     Manufacturer getManufacturer();
 
     void setManufacturer(Manufacturer manufacturer);

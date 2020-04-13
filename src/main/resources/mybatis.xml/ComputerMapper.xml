@@ -13,8 +13,7 @@
     <association property="manufacturer"
                  columnPrefix="manufacturer_"
                  resultMap="org.mybatis.dao.ManufacturerMapper.BaseResultMap"/>
-    <!-- Manually added for ManyToMany -->
-    <!-- Nested select (N+1 select problem) -->
+
     <collection property="processors" javaType="ArrayList"
                 ofType="Processor" column="id"
                 select="selectProcessorsForComputer"/>
