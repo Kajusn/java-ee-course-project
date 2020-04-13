@@ -4,13 +4,14 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core" xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
-<h:head/>
+<h:head>
+    <link rel="stylesheet" type="text/css" href="design.css"/>
+</h:head>
 <h:body>
-    <h1>MyBatis</h1>
     <h2>All CPU models currently in inventory:</h2>
     <h:form>
         <h:inputText a:placeholder="name" value="#{processorsMyBatis.processorToCreate.name}" required="true" />
-        <h:commandButton value="Create a processor" action="#{processorsMyBatis.createProcessor}" >
+        <h:commandButton class="button" value="Create a processor" action="#{processorsMyBatis.createProcessor}" >
         </h:commandButton>
     </h:form>
     <ol>
@@ -18,5 +19,6 @@
             <li><h:link value = "#{processor.name}" outcome = "processorComputer?processorId=#{processor.id}"/></li>
         </ui:repeat>
     </ol>
+    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fplugins.jetbrains.com%2Ffiles%2F7293%2F66000%2Ficon%2FMETA-INF_pluginIcon.png" alt="MyBatis"/>
 </h:body>
 </html>

@@ -2,17 +2,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-<h:head/>
+<h:head>
+    <link rel="stylesheet" type="text/css" href="design.css"/>
+</h:head>
 <h:body>
     <h2>Manufacturers:</h2>
-    <ol>
+    <ul>
         <ui:repeat value="#{manufacturers.allManufacturers}" var="manufacturer">
             <li><h:link value = "#{manufacturer.name}" outcome="computers?manufacturerId=#{manufacturer.id}"/></li>
         </ui:repeat>
-    </ol>
+    </ul>
     <h:form>
         <h:inputText value="#{manufacturers.manufacturerToCreate.name}" required="true" />
-        <h:commandButton value="Add new manufacturer" action="#{manufacturers.createManufacturer}" />
+        <h:commandButton class="button" value="Add new manufacturer" action="#{manufacturers.createManufacturer}" />
     </h:form>
     <h3><h:link value = "CPUs in inventory" outcome = "processors"/></h3>
     <h:link outcome="mybatis/manufacturers" value="MyBatis version"/>
