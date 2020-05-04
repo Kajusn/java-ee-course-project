@@ -5,13 +5,13 @@
     <resultMap id="ComputerResultMap" type="org.mybatis.model.Computer">
         <id column="ID" jdbcType="INTEGER" property="id" />
         <result column="NAME" jdbcType="VARCHAR" property="name" />
-        <collection javaType="ArrayList" property="processors" resultMap="ComputerResultMap" />
+        <collection javaType="ArrayList" property="processors" resultMap="ProcessorResultMap" />
     </resultMap>
 
     <resultMap id="ProcessorResultMap" type="org.mybatis.model.Processor">
         <id column="ID" jdbcType="INTEGER" property="id"/>
         <result column="NAME" jdbcType="VARCHAR" property="name"/>
-        <collection javaType="ArrayList" property="computers" resultMap="ProcessorResultMap" />
+        <collection javaType="ArrayList" property="computers" resultMap="ComputerResultMap" />
     </resultMap>
 
     <insert id="addProcessor" parameterType="java.lang.Integer">

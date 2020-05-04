@@ -27,6 +27,13 @@ public class Processor implements Serializable {
     @Column(name = "NAME")
     private String name;
 
+    @Column(name = "SPEED")
+    private Double speed;
+
+    @Version
+    @Column(name = "OPT_LOCK_VERSION")
+    private Integer version;
+
     @ManyToMany
     @JoinTable(name = "COMPUTER_PROCESSORS")
     private List<Computer> computers = new ArrayList<>();

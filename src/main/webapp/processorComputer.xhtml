@@ -11,6 +11,23 @@
     <h2>Computers running a #{processorComputers.processor.name} CPU:</h2>
     <table>
         <tr>
+            <th>Name</th>
+            <th>Speed</th>
+        </tr>
+        <tr>
+            <td>#{processorComputers.processor.name}</td>
+            <td>#{processorComputers.processor.speed}</td>
+        </tr>
+    </table>
+    <h:form>
+        <h:inputText a:placeholder="Enter processor speed" value="#{processorComputers.processor.speed}" required="true" />
+        <h:commandButton value="update" action="#{processorComputers.updateProcessorSpeed()}">
+            <f:param name="processorId" value="#{processorComputers.processor.id}" />
+        </h:commandButton>
+        <h:outputText value="Value was already modified by other user. If you want to override it - try again" rendered="#{param['error'] == 'optimistic-lock-exception'}" />
+    </h:form>
+    <table>
+        <tr>
             <th>Manufacturer</th>
             <th>Name</th>
             <th>CPU</th>
