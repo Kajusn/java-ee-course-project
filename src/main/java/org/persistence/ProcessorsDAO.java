@@ -3,10 +3,13 @@ package org.persistence;
 import org.entities.Manufacturer;
 import org.entities.Processor;
 
+import javax.ejb.Lock;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.LockModeType;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 import java.util.List;
 
 @ApplicationScoped

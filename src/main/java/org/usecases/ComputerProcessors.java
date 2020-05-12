@@ -15,6 +15,7 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.enterprise.inject.Model;
+import org.interceptors.LoggedInvocation;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -50,6 +51,7 @@ public class ComputerProcessors {
         loadProcessors();
     }
 
+    @LoggedInvocation
     @Transactional
     public String addProcessor(Processor processor) {
         Manufacturer temp = manufacturersDAO.findOne(this.computer.getManufacturer().getId());

@@ -6,15 +6,23 @@ import org.entities.Processor;
 import org.persistence.ProcessorsDAO;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.Dependent;
+import javax.enterprise.inject.Any;
 import javax.enterprise.inject.Model;
 import javax.faces.context.FacesContext;
+import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.persistence.OptimisticLockException;
 import javax.transaction.Transactional;
+import org.interceptors.LoggedInvocation;
+
+import java.io.Serializable;
 import java.util.Map;
 
+@ViewScoped
 @Model
-public class ProcessorComputers {
+public class ProcessorComputers implements org.usecases.Processor, Serializable {
 
     @Inject
     private ProcessorsDAO processorsDAO;
@@ -30,13 +38,20 @@ public class ProcessorComputers {
         this.processor = processorsDAO.findOne(processorId);
     }
 
+    @LoggedInvocation
     @Transactional
-    public String updateProcessorSpeed() {
+    public String updateProcessorSpeed(double speed) {
         try{
             processorsDAO.update(this.processor);
         } catch (OptimisticLockException e) {
             return "/processorComputer.xhtml?faces-redirect=true&processorId=" + this.processor.getId() + "&error=optimistic-lock-exception";
         }
         return "processorComputer?processorId=" + this.processor.getId() + "&faces-redirect=true";
+    }
+
+    @Transactional(Transactional.TxType.REQUIRES_NEW)
+    public void tempProcessorTransaction() {
+        Processor temp = processorsDAO.findOne(this.processor.getId());
+        temp.setSpeed(3.5);
     }
 }

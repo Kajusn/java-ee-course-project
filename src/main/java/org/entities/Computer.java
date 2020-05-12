@@ -26,6 +26,10 @@ public class Computer implements Serializable {
     @Column(name = "NAME")
     private String name;
 
+    @Version
+    @Column(name = "OPT_LOCK_VERSION")
+    private Integer version;
+
     @ManyToOne
     @JoinColumn(name="MANUFACTURER_ID")
     private Manufacturer manufacturer;

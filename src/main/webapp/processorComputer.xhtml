@@ -12,7 +12,7 @@
     <table>
         <tr>
             <th>Name</th>
-            <th>Speed</th>
+            <th>Speed (GHz)</th>
         </tr>
         <tr>
             <td>#{processorComputers.processor.name}</td>
@@ -21,10 +21,16 @@
     </table>
     <h:form>
         <h:inputText a:placeholder="Enter processor speed" value="#{processorComputers.processor.speed}" required="true" />
-        <h:commandButton value="update" action="#{processorComputers.updateProcessorSpeed()}">
+        <h:commandButton value="update" action="#{processorComputers.updateProcessorSpeed(processorComputers.processor.speed)}">
             <f:param name="processorId" value="#{processorComputers.processor.id}" />
         </h:commandButton>
         <h:outputText value="Value was already modified by other user. If you want to override it - try again" rendered="#{param['error'] == 'optimistic-lock-exception'}" />
+    </h:form>
+    <h:form>
+        <h:outputText value="#{generateProcessorSpeed.processorSpeedGenerationStatus}" />
+        <h:commandButton value="Generate processor speed" disabled="#{generateProcessorSpeed.processorSpeedGenerationRunning}" action="#{generateProcessorSpeed.generateNewProcessorSpeed()}">
+            <f:param name="processorId" value="#{processorComputers.processor.id}" />
+        </h:commandButton>
     </h:form>
     <table>
         <tr>
